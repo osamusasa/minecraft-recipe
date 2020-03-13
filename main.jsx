@@ -1,20 +1,10 @@
 function App() {
-  const itemData = [
-    {
-      id: 0,
-      name: 'レンチ(wrench)',
-      img: './img/wrench.png',
-      info: '石の歯車1 + 鉄インゴット3'
-    },
-    {
-      id: 1,
-      name: '木の歯車(Wooden Gear)',
-      img: './img/wooden_gear.png',
-       info: '棒4'
-    }
-  ];
-  
-  const [items, setItems] = React.useState(itemData);
+  const itemDataTemplate = [{id: 0,name: '',img: '',info: ''}];
+  const [items, setItems] = React.useState(itemDataTemplate);
+
+  $.getJSON("./itemData.json", function(json){
+    setItems(json);
+  });
 
   return (
     <div>
