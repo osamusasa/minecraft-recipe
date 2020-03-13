@@ -1,5 +1,5 @@
 function App() {
-  const [items, setItems] = React.useState([
+  const itemData = [
     {
       id: 0,
       name: 'レンチ(wrench)',
@@ -12,7 +12,9 @@ function App() {
       img: './img/wooden_gear.png',
        info: '棒4'
     }
-  ]);
+  ];
+  
+  const [items, setItems] = React.useState(itemData);
 
   return (
     <div>
